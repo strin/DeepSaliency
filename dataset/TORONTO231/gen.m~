@@ -1,0 +1,20 @@
+%%%%% Generate 231x231x3 overlapping regions from the TORONTO dataset along 
+%%%%% with fixations correspondingly. %%%%%%%%
+
+
+path = '../TORONTO/';
+listing = dir(path);
+checkpic = @(name, ext)(~isempty(strfind(name, ext)));
+step = 231;
+for item_i = 1:length(listing)
+    name = listing(item_i).name;
+    if checkpic(name, '.png') || checkpic(name, '.jpg') || checkpic(name, '.jpeg')
+        img = imread([path, name]);
+        imshow(img); pause;
+        for hi = 1:floor(step/2):size(img,1)
+            for wi = 1:floor(step/2):size(img,2)
+                imgsub = img(
+            end
+        end
+    end
+end
